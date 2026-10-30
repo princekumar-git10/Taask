@@ -1,0 +1,407 @@
+
+/* Main layout */
+.app {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 48px 32px 35px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.eyebrow,
+.week-number {
+  color: #7c8479;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 9px;
+}
+
+.header h1 {
+  font-size: clamp(28px, 4vw, 38px);
+  letter-spacing: -1.3px;
+  font-weight: 700;
+  color: #29332b;
+}
+
+.description {
+  color: #777f75;
+  margin-top: 9px;
+  font-size: 14px;
+}
+
+.reset-btn {
+  background: #f8f9f5;
+  border: 1px solid #dce1d8;
+  color: #596457;
+  padding: 11px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+
+.reset-btn:hover {
+  background: #e9eee6;
+  border-color: #aab6a5;
+}
+
+/* Progress */
+.progress-section {
+  background: #fbfcf9;
+  border: 1px solid #e3e7df;
+  border-radius: 13px;
+  padding: 27px 30px;
+  margin-bottom: 28px;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.progress-label {
+  color: #7b8378;
+  font-size: 13px;
+  margin-bottom: 7px;
+}
+
+.progress-info h2 {
+  font-size: 32px;
+  letter-spacing: -1px;
+  color: #29332b;
+}
+
+.percentage {
+  font-size: 23px;
+  font-weight: 700;
+  color: #566d56;
+}
+
+.progress-track {
+  width: 100%;
+  height: 9px;
+  background: #e8ebe4;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #718b70;
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+.progress-caption {
+  font-size: 12px;
+  color: #858c81;
+  margin-top: 13px;
+}
+
+/* Two-column week layout */
+.weeks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+
+.week-card {
+  background: #fbfcf9;
+  border: 1px solid #e3e7df;
+  border-radius: 13px;
+  padding: 24px 25px;
+  transition: border-color 0.2s;
+}
+
+.week-card:hover {
+  border-color: #cbd5c7;
+}
+
+.week-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.week-number {
+  margin-bottom: 7px;
+}
+
+.week-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: #303b31;
+}
+
+.week-count {
+  font-size: 12px;
+  color: #657461;
+  background: #edf1e9;
+  padding: 7px 11px;
+  border-radius: 7px;
+  white-space: nowrap;
+}
+
+/* Tasks */
+.task-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 15px 4px;
+  border-top: 1px solid #edf0e9;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.task:hover {
+  background: #f4f6f1;
+}
+
+.day-number {
+  width: 25px;
+  flex-shrink: 0;
+  color: #9aa194;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Custom checkbox */
+.task input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 21px;
+  height: 21px;
+  min-width: 21px;
+  border: 1.8px solid #c3cbbf;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.task input:hover {
+  border-color: #718b70;
+  transform: scale(1.07);
+}
+
+.task input:checked {
+  background: #718b70;
+  border-color: #718b70;
+}
+
+.task input:checked::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.task input:focus-visible {
+  outline: 3px solid #718b7040;
+  outline-offset: 3px;
+}
+
+.task-name {
+  flex: 1;
+  font-size: 14px;
+  color: #3c443b;
+  line-height: 1.5;
+  transition: 0.2s;
+}
+
+.task.completed .task-name {
+  color: #a0a79b;
+  text-decoration: line-through;
+}
+
+.done-label {
+  color: #718b70;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  color: #92998e;
+  font-size: 12px;
+  padding: 35px 0 10px;
+}
+
+/* Tablet */
+@media (max-width: 850px) {
+  .app {
+    padding: 35px 22px 25px;
+  }
+
+  .weeks {
+    gap: 16px;
+  }
+
+  .week-card {
+    padding: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .app {
+    padding: 28px 15px 20px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 17px;
+  }
+
+  .weeks {
+    grid-template-columns: 1fr;
+  }
+
+  .progress-section {
+    padding: 21px;
+  }
+
+  .week-card {
+    padding: 19px;
+  }
+
+  .task {
+    gap: 11px;
+  }
+}
+
+
+/* ===== FINAL THEME OVERRIDES ===== */
+
+/* Warm background across the entire page */
+html,
+body,
+#root {
+  background: #e9e8e0 !important;
+}
+
+/* Main text */
+.header h1,
+.progress-info h2,
+.week-header h3 {
+  color: #30382f;
+}
+
+/* Progress card and week cards */
+.progress-section,
+.week-card {
+  background: #f5f4ed;
+  border: 1px solid #deded2;
+  border-radius: 14px;
+}
+
+/* Make both cards in each grid row equal in height */
+.weeks {
+  align-items: stretch;
+  grid-auto-rows: 1fr;
+}
+
+.week-card {
+  height: 100%;
+}
+
+/* Consistent task row spacing */
+.task {
+  min-height: 55px;
+  padding: 13px 5px;
+  border-top: 1px solid #e8e7dd;
+}
+
+.task:hover {
+  background: #eeeee5;
+}
+
+/* Softer checkbox */
+.task input {
+  background: #faf9f4;
+  border-color: #b9c2b3;
+}
+
+.task input:checked {
+  background: #718b70;
+  border-color: #718b70;
+}
+
+/* Progress colors */
+.progress-track {
+  background: #e3e4d9;
+}
+
+.progress-fill {
+  background: #718b70;
+}
+
+/* Week counter */
+.week-count {
+  background: #e9ede3;
+  color: #63765e;
+}
+
+/* Reset button */
+.reset-btn {
+  background: #f5f4ed;
+  border-color: #d8d9ce;
+  color: #53604f;
+}
+
+.reset-btn:hover {
+  background: #e9ede3;
+}
+
+/* Task text */
+.task-name {
+  color: #3b4439;
+}
+
+.task.completed .task-name {
+  color: #92998c;
+}
+
+.done-label {
+  color: #718b70;
+}
+
+/* Mobile layout */
+@media (max-width: 650px) {
+  .weeks {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+
+  .week-card {
+    height: auto;
+  }
+}
